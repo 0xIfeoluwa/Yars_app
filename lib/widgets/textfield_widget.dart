@@ -6,10 +6,14 @@ class TextfieldWidget extends StatelessWidget {
     required this.icon,
     required this.labelText,
     required this.text,
+    this.keyboardType = TextInputType.text,
+    this.suffixIcon,
   });
   final String text;
   final String labelText;
   final IconData icon;
+  final TextInputType? keyboardType;
+  final IconData? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +30,10 @@ class TextfieldWidget extends StatelessWidget {
             height: 10,
           ),
           TextField(
+            keyboardType: keyboardType,
             decoration: InputDecoration(
               prefixIcon: Icon(icon),
+              suffix: Icon(suffixIcon),
               labelText: labelText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),

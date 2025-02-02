@@ -24,10 +24,12 @@ class CustomButton extends StatelessWidget {
           height: 50,
           child: ElevatedButton(
             onPressed: onPressed,
-            style: const ButtonStyle(
-              backgroundColor:
-                  WidgetStatePropertyAll(Color.fromARGB(255, 39, 34, 34)),
-              foregroundColor: WidgetStatePropertyAll(Colors.white),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 39, 34, 34),
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
             ),
             child: Text(
               text,

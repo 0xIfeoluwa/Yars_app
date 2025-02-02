@@ -15,15 +15,21 @@ class CustomButtonIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-      child: SizedBox(
+      child: Container(
         width: MediaQuery.of(context).size.width,
         height: 60,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+        ),
         child: OutlinedButton.icon(
           onPressed: () {},
           label: Text(text),
           icon: Icon(icon),
-          style: ButtonStyle(
-            backgroundColor: WidgetStatePropertyAll(bColor),
+          style: OutlinedButton.styleFrom(
+            backgroundColor: bColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
           ),
         ),
       ),
