@@ -4,14 +4,14 @@ import 'package:yars_app/widgets/custom_button.dart';
 import 'package:yars_app/widgets/custom_button_icon.dart';
 import 'package:yars_app/widgets/textfield_widget.dart';
 
-class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _CreateAccountScreenState extends State<CreateAccountScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            const Text('Create account and enjoy all services'),
+            const Text('Welcome back!'),
+            const Text('Sign In to your account'),
             const SizedBox(
               height: 20,
             ),
@@ -50,11 +51,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             const SizedBox(height: 20),
             const Text('OR'),
             const TextfieldWidget(
-              icon: Icons.person,
-              labelText: 'Full Name',
-              text: 'Full name',
-            ),
-            const TextfieldWidget(
               icon: Icons.email_outlined,
               labelText: 'Email',
               text: 'Email',
@@ -66,15 +62,14 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               text: 'Password',
               keyboardType: TextInputType.visiblePassword,
             ),
-            const Text("Radio Button Here"),
-            CustomButton(onPressed: () {}, text: 'Sign Up'),
+            CustomButton(onPressed: () {}, text: 'Login'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Already have an account?'),
+                const Text("Don't have an account? "),
                 TextButton(
-                  onPressed: () => context.go('/login'),
-                  child: const Text('Login'),
+                  onPressed: () => context.go('/sign_up'),
+                  child: const Text('Sign Up'),
                 ),
               ],
             ),
